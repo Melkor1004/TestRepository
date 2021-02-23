@@ -15,7 +15,7 @@ public class TransactionEntity extends BaseEntity {
     private Long customerId;
 
     @ManyToOne
-    @JoinColumn(name = "transactionid")
+    @JoinColumn(name = "transactionid", insertable = false, updatable = false)
     private TransactionTypeEntity transactiontype;
 
     @ManyToOne

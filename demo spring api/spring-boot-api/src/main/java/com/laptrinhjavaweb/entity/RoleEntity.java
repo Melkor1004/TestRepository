@@ -16,7 +16,7 @@ public class RoleEntity extends BaseEntity {
     @Column( nullable = false)
     private String code;
 
-    @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "roles")
     private List<UserEntity> users = new ArrayList<>();
 
     public String getName() {

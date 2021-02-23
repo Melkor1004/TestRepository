@@ -13,13 +13,12 @@ public class BuildingEntity extends BaseEntity {
     private List<RentAreaEntity> areas;
 
     @ManyToOne
-    @JoinColumn(name = "districid")
+    @JoinColumn(name = "districid", insertable = false, updatable = false)
     private DistrictEntity district;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "buildingrenttype",
-            joinColumns = @JoinColumn(name = "buildingid"),
             inverseJoinColumns = @JoinColumn(name = "renttypeid")
     )
     private List<RentTypeEntity> renttypes;
